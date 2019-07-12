@@ -1,4 +1,5 @@
 <script>
+  import { Input } from "../../components";
   export let main = "Main";
   export let sub = "Sub";
   export let buttonTitle = "Subscribe";
@@ -43,11 +44,7 @@
           <div class="form__inputs">
             <div class="form__input">
               <!-- TODO: Implement mail -->
-              <input
-                class="text-input js-email-input"
-                type="email"
-                name="EMAIL"
-                {placeholder} />
+              <Input type="email" name="EMAIL" {placeholder} />
               <div class="form__messages">
                 <div
                   class="message message--engaging js-message

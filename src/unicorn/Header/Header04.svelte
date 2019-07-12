@@ -8,14 +8,12 @@
     { title: "Sign up", link: "/" },
     { title: "Learn more" }
   ];
-  export let navProps = {};
   const [{ title: title1, link: link1 }, { title: title2 }] = buttons;
 </script>
 
 <header class="header-04 js-scroll-this-box">
   <div class="header-04__box" style="background-image: url({img})">
     <div class="header-04__overlay">
-      <Nav01 {...navProps} />
       <div class="container container--mid header-04__container">
         <div class="header-04__card header-04__card--top">
           <div class="header-04__card_content">

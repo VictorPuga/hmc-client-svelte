@@ -1,4 +1,5 @@
 <script>
+  import { link } from "svelte-routing";
   export let icon = "img/other/logo.svg";
   export let buttons = [
     { title: "One", link: "/" },
@@ -16,7 +17,7 @@
   <div class="container">
     <div class="nav-01__box">
       <div class="nav-01__logo">
-        <a class="nav-01__link" href="javascript:void(0);" target="_blank">
+        <a class="nav-01__link" href="/" use:link>
           <img class="nav-01__logo_img" src={icon} alt="Logo" />
         </a>
       </div>
