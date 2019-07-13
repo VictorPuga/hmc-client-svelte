@@ -36,11 +36,13 @@
   --general-text-01: var(--black);
   --general-text-02: var(--black-soft);
   --general-bg: var(--white);
+  --header_bg: var(--purple-softer);
   --button-primary_bg: var(--pink);
   --button-primary_hover: var(--pink-hard);
   --button-primary_color: var(--white);
   --button-secondary_bg: var(--white);
   --button-secondary_color: var(--black);
+  --button-ghost_hover: rgba(127, 127, 127, 0.1);
   --tab-button_color: var(--black-hard);
   --tab-button-selected_bg: var(--white-soft);
   --tab-button-selected_color: var(--pink);
@@ -72,11 +74,13 @@
     --general-text-01: var(--white);
     --general-text-02: var(--white-hard);
     --general-bg: var(--black);
+    --header_bg: var(--black);
     --button-primary_bg: var(--pink);
     --button-primary_hover: var(--pink-hard);
     --button-primary_color: var(--white);
     --button-secondary_bg: var(--white);
     --button-secondary_color: var(--black);
+    --button-ghost_hover: rgba( 255, 255, 255, 0.1);
     --tab-button_color: var(--white);
     --tab-button-selected_bg: var(--darkpurple-hard);
     --tab-button-selected_color: var(--pink);

@@ -1,13 +1,8 @@
 <script>
-  const _button = {
-    title: "Click here",
-    link: "/"
-  };
   const _feature = {
     title: "Title",
     description: "Description...",
     img: ""
-    // button: _button
   };
   export let pre = "";
   export let main = "Main";
@@ -15,7 +10,7 @@
   export let features = [_feature, _feature];
 </script>
 
-<div class="features-01">
+<div class="features-01" id="features">
   <div class="container container--small">
     <div class="features-01__title_box">
       <div class="subheading">{pre}</div>

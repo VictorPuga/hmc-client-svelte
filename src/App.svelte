@@ -4,22 +4,19 @@
   import { Nav01 } from "./unicorn";
   export let url = "";
   const navButtons = [
-    { title: "About", link: "/about" },
-    { title: "Features", link: "/" },
-    { title: "Contact us", link: "/" },
-    { title: "Demo", link: "/" },
-    { title: "Sign up", link: "/sign-up", outline: true }
+    { title: "Nosotros", href: "#features" },
+    { title: "Planes", href: "#subscription-plans" },
+    { title: "FAQ", href: "#faq" },
+    { title: "Entérate", href: "#newsletter-signup", outline: true }
   ];
 </script>
 
 <Router {url}>
-  <div class="container">
+  <div>
     <Nav01 buttons={navButtons} icon="img/logos/self/square.png" />
   </div>
-  <div class="container" style="margin-top: 60px">
+  <div style="margin-top: 80px">
     <Route path="sign-up" component={SignUp} />
-    <Route path="/">
-      <Home />
-    </Route>
+    <Route path="/" component={Home} />
   </div>
 </Router>

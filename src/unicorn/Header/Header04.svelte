@@ -1,15 +1,25 @@
 <script>
-  import { Nav01 } from "../";
-
+  const _logo = {
+    img: "img/logos/press/white/lifehacker.svg",
+    name: "Lifehacker",
+    height: 50
+  };
   export let main = "Main";
   export let sub = "Sub";
   export let img = "";
   export let buttons = [
-    { title: "Sign up", link: "/" },
+    { title: "Sign up", href: "/" },
     { title: "Learn more" }
   ];
-  const [{ title: title1, link: link1 }, { title: title2 }] = buttons;
+  // const [{ title: title1, href: href1 }, { title: title2 }] = buttons;
+  export let logos = [_logo, _logo, _logo];
 </script>
+
+<style>
+  header {
+    background-color: var(--header_bg);
+  }
+</style>
 
 <header class="header-04 js-scroll-this-box">
   <div class="header-04__box" style="background-image: url({img})">
@@ -28,16 +38,16 @@
                 <li class="buttons-set__item">
                   <a
                     class="button button--alt-accent-bg "
-                    href={link1}
+                    href={buttons[0].href}
                     target="_blank">
-                    <span>{title1}</span>
+                    <span>{buttons[0].title}</span>
                   </a>
                 </li>
                 <li class="buttons-set__item">
                   <button
                     class="button js-scroll-down button--white-bg "
                     type="button">
-                    <span class="button__text"> {title2}</span>
+                    <span class="button__text">{buttons[1].title}</span>
                     <!-- TODO: Implement scroll down -->
                   </button>
                 </li>
@@ -49,34 +59,17 @@
           <div class="header-04__logos">
             <div class="logos">
               <ul class="logos__list">
-                <li class="logos__item">
-                  <img
-                    class="logos__img"
-                    src="img/logos/press/white/tech-crunch.svg"
-                    alt="Tech Crunch logo"
-                    height="25" />
-                </li>
-                <li class="logos__item">
-                  <img
-                    class="logos__img"
-                    src="img/logos/press/white/forbes.svg"
-                    alt="Forbes logo"
-                    height="30" />
-                </li>
-                <li class="logos__item">
-                  <img
-                    class="logos__img"
-                    src="img/logos/press/white/ycombinator.svg"
-                    alt="YC logo"
-                    height="30" />
-                </li>
-                <li class="logos__item">
-                  <img
-                    class="logos__img"
-                    src="img/logos/press/white/lifehacker.svg"
-                    alt="Lifehacker logo"
-                    height="30" />
-                </li>
+                {#each logos as { img, name, height }}
+                  <li class="logos__item">
+                    <img
+                      class="logos__img"
+                      src={img}
+                      alt={name}
+                      {height}
+                      draggable="false"
+                      style="padding: 5px;" />
+                  </li>
+                {/each}
               </ul>
             </div>
           </div>

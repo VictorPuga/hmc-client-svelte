@@ -10,7 +10,7 @@
        viewBox="0 0 100 100"
        preserveAspectRatio="none">
   <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
-    <stop  offset="0" style="stop-color:#FA114F"/>
+    <stop  offset="0" style="stop-color:#FF375F"/>
     <stop  offset="1" style="stop-color:#4834D4"/>
   </linearGradient>
   <polygon fill="url(#SVGID_1_)" points="100,100 0,100 0,0 "/>

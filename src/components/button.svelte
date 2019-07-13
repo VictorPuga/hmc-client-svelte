@@ -1,11 +1,14 @@
 <script>
+  import { link } from "svelte-routing";
   export let title = "Button";
   export let variant = "light";
-  const { title: _t, variant: _v, ...props } = $$props;
+  export let href = "";
+  const { title: _t, variant: _v, href: _h, ...props } = $$props;
 </script>
 
 <style>
-  button {
+  button,
+  a {
     overflow: hidden;
     display: inline-block;
     position: relative;
@@ -28,16 +31,26 @@
     transition: color 0.2s ease, background-color 0.2s ease,
       border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
-  button[disabled] {
+  button[disabled],
+  a[disabled] {
     cursor: default;
+    opacity: 0.4;
   }
+  button[disabled]:hover,
+  a[disabled]:hover {
+    transform: none;
+  }
+
   button:hover,
-  button:focus {
+  button:focus,
+  a:hover,
+  a:focus {
     transform: translateY(-2px);
     box-shadow: 0 2px 8px 0 rgba(136, 144, 195, 0.22),
       0 8px 15px 0 rgba(37, 44, 97, 0.17);
   }
-  button:active {
+  button:active,
+  a:active {
     transform: translateY(-1px);
     box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
       0 5px 15px 0 rgba(37, 44, 97, 0.15);
@@ -56,16 +69,38 @@
   .primary:focus {
     background-color: var(--button-primary_hover);
   }
-  .ghost {
+  .outline {
     background-color: transparent;
-    border-color: var(--white);
+    border-color: var(--general-text-01);
+    color: var(--general-text-01);
+  }
+  .ghost {
+    box-shadow: none;
+    color: var(--general-text-01);
+  }
+  .ghost:hover,
+  .ghost:focus {
+    box-shadow: none;
+    background-color: var(--button-ghost_hover);
+  }
+
+  /* .nav buttons are always white */
+  .nav {
+    box-shadow: none;
     color: var(--white);
   }
-  .dark {
-    background-color: var(--button-secondary_color);
-    color: var(--button-secondary_bg);
+  .nav:hover,
+  .nav:focus {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.1);
   }
 </style>
 
 <!-- TODO: forward more events -->
-<button class={variant} on:click {...props}>{title}</button>
+{#if !href}
+  <button class={variant} on:click {...props}>{title}</button>
+{:else if href.search('#') == -1}
+  <a {href} class={variant} {...props} use:link>{title}</a>
+{:else}
+  <a {href} class={variant} {...props}>{title}</a>
+{/if}

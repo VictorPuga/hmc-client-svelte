@@ -14,6 +14,43 @@
     Nav01
   } from "../unicorn";
   // export let name;
+  const logos = [
+    {
+      name: "Orion Startups",
+      img: "img/logos/companies/orionstartups.png",
+      height: 100
+    },
+    {
+      name: "Keya",
+      img: "img/logos/companies/keya.png",
+      height: 100
+    },
+    {
+      name: "Gamma Partners",
+      img: "img/logos/companies/gammapartners.png",
+      height: 100
+    },
+    {
+      name: "Bambu Code",
+      img: "img/logos/companies/bambucode.png",
+      height: 30
+    },
+    {
+      name: "TGC",
+      img: "img/logos/companies/tgc.png",
+      height: 100
+    },
+    {
+      name: "Gauzz",
+      img: "img/logos/companies/gauzz.png",
+      height: 100
+    },
+    {
+      name: "Nova Orion",
+      img: "img/logos/companies/novaorion.png",
+      height: 100
+    }
+  ];
   const features = [
     {
       title: "Charlemos",
@@ -60,7 +97,7 @@
       img: "img/emoji/scooter.png",
       prices: [99, 79],
       items: ["Cursos a $100", "Bootcamps a $250", "Hackathones a $350"],
-      button: { title: "Start Now", link: "/" }
+      button: { title: "Próximamente", disabled: true }
     },
     {
       main: "Hacker",
@@ -75,7 +112,7 @@
         "Accesso a red de expertos Nova Orión",
         "Descuento Coworking Tec 50%"
       ],
-      button: { title: "Start Now", link: "/" }
+      button: { title: "Próximamente", disabled: true }
     },
     {
       main: "Gangster",
@@ -90,7 +127,7 @@
         "Programa Work at a Startup",
         "Beca en Incubación de Nova Orión"
       ],
-      button: { title: "Start Now", link: "/" }
+      button: { title: "Próximamente", disabled: true }
     }
   ];
   const faqs = [
@@ -118,28 +155,28 @@
   const icons = [
     {
       img: "img/icons/social/black/slack.svg",
-      link:
+      href:
         "https://join.slack.com/t/hacker-mafia/shared_invite/enQtNjgzMzQwMzA3MDcyLTQ3ZmM0ZTVhNzEwYjFlM2QyYzA5NTc3M2M0NjIwY2Y0Y2ZkZmFlNmM3ODZmMDE4YWQ1NmM1YWRjZmZmOTY0MGY",
       platform: "Slack"
     },
     {
       img: "img/icons/social/black/facebook.svg",
-      link: "https://www.facebook.com/Hacker-Mafia-386592791984319/",
+      href: "https://www.facebook.com/Hacker-Mafia-386592791984319/",
       platform: "Facebook"
     },
     {
       img: "img/icons/social/black/twitter.svg",
-      link: "https://twitter.com/hackermafiaclub",
+      href: "https://twitter.com/hackermafiaclub",
       platform: "Twitter"
     },
     {
       img: "img/icons/social/black/instagram.svg",
-      link: "javascript:alert('coming soon')",
+      href: "javascript:alert('coming soon')",
       platform: "Instagram"
     },
     {
-      img: "img/icons/social/black/medium1.svg",
-      link: "https://medium.com/hacker-mafia-club",
+      img: "img/icons/social/black/medium.svg",
+      href: "https://medium.com/hacker-mafia-club",
       platform: "Medium"
     }
   ];
@@ -153,14 +190,15 @@
   <title>Home</title>
 </svelte:head> -->
 
-<div style="margin-top: -120px">
+<div style="margin-top: -120px; width: 100%">
   <Header04
     main="Una comunidad de Hackers para Hackers"
     sub="Hacker Mafia es una comunidad para todos aquellos Hackers que creemos
     en cambiar el mundo software y la inteligencia artificial. <br />Made with
     ❤️ in Chihuahua"
-    img="img/photos/cool-laptop.jpeg"
-    buttons={[{ title: 'Sign up', link: '/' }, { title: 'Learn more' }]} />
+    img="test.png"
+    buttons={[{ title: 'Sign up', href: '/' }, { title: 'Learn more' }]}
+    {logos} />
   <Text04
     text="Porque Chihuahua está lista para una comunidad técnica de Inteligencia
     Artificial y Software." />
@@ -176,6 +214,7 @@
     sub="Subscripciones para Hackers de todo tamaño, ambición e intereses."
     tabs={['Mensual', 'Anual']}
     badgeText="+1 mes gratis"
+    unit="mes"
     {cards} />
   <Text00
     main="¿No estás seguro?"
@@ -195,7 +234,7 @@
     sub="Preguntar es de sabios, pero nadie se a ha muerto por leer un FAQ."
     {faqs}
     help="¿No ves tu pregunta?"
-    button={{ title: 'Mándanos un mail', link: 'mailto:hackermafia@orionstartups.com?subject=Pregunta%20Hacker' }} />
+    button={{ title: 'Mándanos un mail', href: 'mailto:hackermafia@orionstartups.com?subject=Pregunta%20Hacker' }} />
   <Contact02
     main="Síguenos"
     contacts={[{ title: 'Contacto', email: 'hackermafia@orionstartups.com' }]}

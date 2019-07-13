@@ -4,13 +4,12 @@
   export let sub = "Sub";
   export let faqs = [_faq, _faq, _faq, _faq];
   export let help = "Help";
-  export let button = { title: "Send mail", link: "" };
+  export let button = { title: "Send mail", href: "" };
   const c1 = faqs.slice(0, Math.floor(faqs.length / 2));
   const c2 = faqs.slice(Math.ceil(faqs.length / 2));
 </script>
 
-<div class="faq-02">
-
+<div class="faq-02" id="faq">
   <div class="container container--small">
     <div class="title-box title-box--center">
       <h2 class="heading">
@@ -49,7 +48,7 @@
       <li class="faq-02__button">{help}</li>
       <br />
       <li class="faq-02__button">
-        <a class="button button--midnight-outline " href={button.link}>
+        <a class="button button--midnight-outline " href={button.href}>
           <span>{button.title}</span>
         </a>
       </li>

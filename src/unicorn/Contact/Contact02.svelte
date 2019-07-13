@@ -1,5 +1,5 @@
 <script>
-  const _icon = { img: "", link: "/", platform: "" };
+  const _icon = { img: "", href: "/", platform: "" };
   export let main = "Main";
   export let contacts = [{ title: "hey", email: "hey@hey.hey" }];
   export let icons = [_icon, _icon, _icon];
@@ -12,9 +12,9 @@
         <h3 class="contact-02__item_title">{main}</h3>
         <div class="contact-02__social social-buttons social-buttons--left">
           <ul class="social-buttons__list">
-            {#each icons as { img, link, platform }}
+            {#each icons as { img, href, platform }}
               <li class="social-buttons__item">
-                <a class="social-buttons__link" href={link} target="_blank">
+                <a class="social-buttons__link" {href} target="_blank">
                   <img class="social-buttons__icon" src={img} alt={platform} />
                 </a>
               </li>
