@@ -5,6 +5,8 @@
   --white: #fff;
   --black: #000;
   --gray: #ccc;
+  --lightpurple: #E4E0FF;
+  --lightpink: #FFE0E7;
   /* 
     Soft colors are, well, soft ;)
   */
@@ -51,8 +53,8 @@
   --pricing-button_color: var(--black-hard);
   --pricing-button_border: var(--black-hard);
   --footer_bg: var(--white-hard);
-  --indicator: var(--white-soft);
-  --indicator-selected: var(--pink);
+  --indicator: var(--lightpurple);
+  --indicator-selected: var(--purple-softer);
   --card_bg: var(--white);
   --card-top_bg: var(--white-hard);
   --input_bg: rgba(246, 246, 246, 0.8);
@@ -89,8 +91,8 @@
     --pricing-button_color: var(--white-hard);
     --pricing-button_border: var(--white-hard);
     --footer_bg: var(--black-hard);
-    --indicator: var(--black-soft);
-    --indicator-selected: var(--purple-hard);
+    --indicator: var(--darkpurple-softer);
+    --indicator-selected: var(--purple);
     --card_bg: var(--black-hard);
     --card-top_bg: var(--darkpurple-hard);
     --input_bg: rgba(246, 246, 246, 0.1);
@@ -1225,8 +1227,7 @@ button.button {
   height: 60px;
   width: 60px;
   cursor: pointer;
-  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.17);
-  background-color: var(--button-primary_bg);
+  background-color: var(--white-hard);
   transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -1255,11 +1256,11 @@ button.button {
 
 .circle-button .icon svg * {
   transition: fill 0.2s ease;
-  fill: var(--general-text-01);
+  /* fill: var(--general-text-01); */
 }
 
 .circle-button--blue-bg {
-  background-color: var(--light-purple-01);
+  background-color: var(--indicator);
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.17);
   color: var(--w);
 }
@@ -1289,20 +1290,20 @@ button.button {
 }
 
 .circle-button--light-blue-bg {
-  background-color: var(--w-ish-01);
+  background-color: var(--indicator);
 }
 
 .circle-button--light-blue-bg:hover {
-  background-color: var(--light-purple-01);
+  background-color: var(--indicator-selected);
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.17);
 }
 
 .circle-button--light-blue-bg:hover svg * {
-  fill: var(--w);
+  fill: var(--white);
 }
 
 .circle-button--light-blue-bg svg * {
-  fill: var(--light-purple-01);
+  fill: var(--indicator-selected);
 }
 
 .emoji {
@@ -2197,6 +2198,7 @@ button.button {
   z-index: 100;
   width: 100%;
   margin-top: 10px;
+  background-color: var(--card_bg)
 }
 
 .form__message_opener {
@@ -2265,16 +2267,16 @@ button.button {
 }
 
 .message--engaging .message__box .message__bubble_text--out {
-  color: var(--w);
-  background-color: var(--light-purple-01);
+  color: var(--white);
+  background-color: var(--lightpurple);
 }
 
 .message--success .message__box {
-  border-color: var(--secondary-button-color);
+  border-color: var(--pink);
 }
 
 .message--success .message__box .message__bubble_text--out {
-  color: var(--w);
+  color: var(--white);
   background-color: var(--secondary-button-color);
 }
 
@@ -2283,7 +2285,7 @@ button.button {
 }
 
 .message--error .message__box .message__bubble_text--out {
-  color: var(--w);
+  color: var(--white);
   background-color: var(--primary-button-border);
 }
 
@@ -2296,7 +2298,7 @@ button.button {
 }
 
 .message__close:hover {
-  background-color: var(--w-ish-04);
+  background-color: rgba(88, 62, 255, 0.1);
 }
 
 .message__close_icon {
@@ -2341,7 +2343,7 @@ button.button {
   display: inline-block;
   border-radius: 30px;
   padding: 10px 20px;
-  background-color: var(--w-ish-01);
+  background-color: var(--card-top_bg);
   line-height: 1.4;
 }
 
@@ -2414,17 +2416,17 @@ button.button {
 
 .message__bubble_error {
   margin-top: 5px;
-  color: var(--primary-button-border);
+  color: var(--pink-hard);
   font-family: Courier, monospace;
 }
 
 .message__bubble_link {
-  color: var(--light-purple-01);
+  color: var(--general-text-01);
   text-decoration: underline;
 }
 
 .message__bubble_link:hover {
-  color: #2a42fb;
+  color: var(--link_hover);
 }
 
 .message__reply_box {
@@ -2441,7 +2443,7 @@ button.button {
   transform: translateY(-50%);
   padding: 5px 10px;
   font-size: 12px;
-  background-color: var(--w);
+  background-color: var(--white);
   color: var(--black-soft);
 }
 

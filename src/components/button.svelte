@@ -6,7 +6,7 @@
   const { title: _t, variant: _v, href: _h, ...props } = $$props;
 </script>
 
-<style>
+<style lang="scss">
   button,
   a {
     overflow: hidden;
@@ -30,76 +30,76 @@
     cursor: pointer;
     transition: color 0.2s ease, background-color 0.2s ease,
       border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-  }
-  button[disabled],
-  a[disabled] {
-    cursor: default;
-    opacity: 0.4;
-  }
-  button[disabled]:hover,
-  a[disabled]:hover {
-    transform: none;
-  }
 
-  button:hover,
-  button:focus,
-  a:hover,
-  a:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px 0 rgba(136, 144, 195, 0.22),
-      0 8px 15px 0 rgba(37, 44, 97, 0.17);
-  }
-  button:active,
-  a:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
-      0 5px 15px 0 rgba(37, 44, 97, 0.15);
-    outline: none;
-  }
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px 0 rgba(136, 144, 195, 0.22),
+        0 8px 15px 0 rgba(37, 44, 97, 0.17);
+    }
 
-  .light {
-    background-color: var(--button-secondary_bg);
-    color: var(--button-secondary_color);
-  }
-  .primary {
-    background-color: var(--button-primary_bg);
-    color: var(--button-primary_color);
-  }
-  .primary:hover,
-  .primary:focus {
-    background-color: var(--button-primary_hover);
-  }
-  .outline {
-    background-color: transparent;
-    border-color: var(--general-text-01);
-    color: var(--general-text-01);
-  }
-  .ghost {
-    box-shadow: none;
-    color: var(--general-text-01);
-  }
-  .ghost:hover,
-  .ghost:focus {
-    box-shadow: none;
-    background-color: var(--button-ghost_hover);
-  }
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+        0 5px 15px 0 rgba(37, 44, 97, 0.15);
+      outline: none;
+    }
 
-  /* .nav buttons are always white */
-  .nav {
-    box-shadow: none;
-    color: var(--white);
-  }
-  .nav:hover,
-  .nav:focus {
-    box-shadow: none;
-    background-color: rgba(255, 255, 255, 0.1);
+    &.light {
+      background-color: var(--button-secondary_bg);
+      color: var(--button-secondary_color);
+    }
+
+    &.primary {
+      background-color: var(--button-primary_bg);
+      color: var(--button-primary_color);
+      &:hover,
+      &:focus {
+        background-color: var(--button-primary_hover);
+      }
+    }
+
+    &.outline {
+      background-color: transparent;
+      border-color: var(--general-text-01);
+      color: var(--general-text-01);
+    }
+
+    &.ghost {
+      box-shadow: none;
+      color: var(--general-text-01);
+      &:hover,
+      &:focus {
+        box-shadow: none;
+        background-color: var(--button-ghost_hover);
+      }
+    }
+
+    /* .nav buttons are always white */
+    &.nav {
+      box-shadow: none;
+      color: var(--white);
+      &:hover,
+      &:focus {
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    &[disabled] {
+      cursor: default;
+      opacity: 0.4;
+      &:hover {
+        transform: none;
+      }
+    }
   }
 </style>
 
 <!-- TODO: forward more events -->
 {#if !href}
   <button class={variant} on:click {...props}>{title}</button>
-{:else if href.search('#') == -1}
+{:else if href.includes('#')}
   <a {href} class={variant} {...props} use:link>{title}</a>
 {:else}
   <a {href} class={variant} {...props}>{title}</a>
