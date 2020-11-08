@@ -13,7 +13,10 @@
 
 <Router {url}>
   <div>
-    <Nav01 buttons={navButtons} icon="img/logos/self/square.png" />
+    <Nav01
+      buttons={navButtons}
+      icon="img/logos/self/square.png"
+      title="Hacker Mafia Club" />
   </div>
   <div style="margin-top: 80px">
     <Route path="sign-up" component={SignUp} />

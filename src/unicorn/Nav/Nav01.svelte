@@ -2,6 +2,7 @@
   import { link } from "svelte-routing";
   import { Button } from "../../components";
   export let icon = "img/other/logo.svg";
+  export let title = "";
   export let buttons = [
     { title: "One", href: "/" },
     { title: "Two", href: "/" },
@@ -15,6 +16,9 @@
       <div class="nav-01__logo">
         <a class="nav-01__link" href="/" use:link>
           <img class="nav-01__logo_img" src={icon} alt="Logo" />
+          <span style="color: var(--pink)" class="nav-01__logo_text white-text">
+            {title}
+          </span>
         </a>
       </div>
       <div class="nav-01__links js-menu">
